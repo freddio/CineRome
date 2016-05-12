@@ -3,7 +3,7 @@ package com.demos.cine.model;
 public class Article {
 	private String reference;
 	private String designation;
-	private double prixHT;
+	private double prixHT=0;
 	private int qteStock;
 	public Article(String reference, String designation, double prixHT, int qteStock) {
 		super();
