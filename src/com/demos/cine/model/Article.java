@@ -3,9 +3,9 @@ package com.demos.cine.model;
 public class Article {
 	private String reference;
 	private String designation;
-	private double prixHT=0;
+	private Prix prixHT;
 	private int qteStock;
-	public Article(String reference, String designation, double prixHT, int qteStock) {
+	public Article(String reference, String designation, Prix prixHT, int qteStock) {
 		super();
 		this.reference = reference;
 		this.designation = designation;
@@ -13,9 +13,9 @@ public class Article {
 		this.qteStock = qteStock;
 	}
 	public double getPrixHT() {
-		return prixHT;
+		return prixHT.getPrix();
 	}
-	public void setPrixHT(double prixHT) {
+	public void setPrixHT(Prix prixHT) {
 		this.prixHT = prixHT;
 	}
 	public String getReference() {
