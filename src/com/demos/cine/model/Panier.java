@@ -9,6 +9,7 @@ public class Panier {
 		LignePanier lp = new LignePanier(a,qte);
 		contenu.add(lp);
 	}
+	
 	public String toString(){
 		String description="";
 		for(LignePanier lp:contenu){
