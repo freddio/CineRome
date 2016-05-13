@@ -5,12 +5,30 @@ public class Article {
 	private String designation;
 	private double prixHT=0;
 	private int qteStock;
+	
+	private boolean dematerialise;
 	public Article(String reference, String designation, double prixHT, int qteStock) {
 		super();
 		this.reference = reference;
 		this.designation = designation;
 		this.prixHT = prixHT;
 		this.qteStock = qteStock;
+		this.dematerialise=false;
+	}
+	// objets dématérialisés
+	public Article(String reference, String designation, double prixHT) {
+		super();
+		this.reference = reference;
+		this.designation = designation;
+		this.prixHT = prixHT;
+		this.qteStock = 0;
+		this.dematerialise=true;
+	}
+	public boolean isDematerialise() {
+		return dematerialise;
+	}
+	public void setDematerialise(boolean dematerialise) {
+		this.dematerialise = dematerialise;
 	}
 	public double getPrixHT() {
 		return prixHT;
@@ -35,8 +53,20 @@ public class Article {
 	}
 	@Override
 	public String toString() {
-		return "Article [reference=" + reference + ", designation=" + designation + ", prixHT=" + prixHT + ", qteStock="
-				+ qteStock + "]";
+		String description="";
+		if(!isDematerialise()){ 
+			description="reference=" + reference + 
+			", designation=" + designation +
+			", prixHT=" + prixHT +
+			", qteStock=" + qteStock;
+		}
+		else{
+			description="reference=" + reference + 
+					", designation=" + designation +
+					", prixHT=" + prixHT +
+					", objet dématérialisé";
+		}
+		return description;
 	}
 	
 }
