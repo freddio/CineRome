@@ -5,6 +5,13 @@ public class Article {
 	private String designation;
 	private double prixHT=0;
 	private int qteStock;
+	private String type;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public Article(String reference, String designation, double prixHT, int qteStock) {
 		super();
 		this.reference = reference;
